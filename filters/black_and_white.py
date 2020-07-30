@@ -20,5 +20,4 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     cv2.imshow('Black&White', gray)
 
-capture_device.release()
-cv2.destroyWindow()
+cv2.destroyAllWindows()

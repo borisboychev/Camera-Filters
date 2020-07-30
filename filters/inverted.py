@@ -27,5 +27,4 @@ while True:
     cv2.imshow('inverted', inverted)
     # cv2.imshow('normal', frame)
 
-capture_device.release()
-cv2.destroyWindow()
+cv2.destroyAllWindows()

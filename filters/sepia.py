@@ -36,5 +36,4 @@ while True:
     cv2.imshow('sepia', sepia)
 
 
-capture_device.release()
-cv2.destroyWindow()
+cv2.destroyAllWindows()
