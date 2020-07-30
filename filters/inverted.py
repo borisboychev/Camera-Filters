@@ -9,6 +9,7 @@ def make_1080p():
 
 
 def apply_invert(frame):
+    # inverts values
     return cv2.bitwise_not(frame)
 
 
