@@ -1,7 +1,7 @@
-from filters.blur import execute_blur
-from filters.inverted import execute_inverted
-from filters.sepia import execute_sepia
-from filters.black_and_white import execute_black_and_white
+from filters.blur import BlurFilter
+from filters.inverted import InvertedFilter
+from filters.sepia import SepiaFilter
+from filters.black_and_white import BlackAndWhite
 import sys
 
 
@@ -14,12 +14,18 @@ class NoSuchFilter(Exception):
 
 
 if sys.argv[1] == 'black_and_white':
-    execute_black_and_white()
+    bw = BlackAndWhite()
+    bw.execute_filter()
 elif sys.argv[1] == 'blur':
-    execute_blur()
+    blur = BlurFilter()
+    blur.execute_filter()
 elif sys.argv[1] == 'sepia':
-    execute_sepia()
+    SepiaFilter.execute_filter(SepiaFilter)
+    sepia = SepiaFilter()
+    sepia.execute_filter()
 elif sys.argv[1] == 'inverted':
-    execute_inverted()
+    inverted = InvertedFilter()
+    inverted.execute_filter()
+
 else:
     raise NoSuchFilter
