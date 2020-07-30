@@ -9,8 +9,7 @@ class InvertedFilter:
         self.capture_device.set(3, 1920)
         self.capture_device.set(4, 1080)
 
-    @staticmethod
-    def apply_invert(frame):
+    def apply_invert(self, frame):
         # inverts values
         return cv2.bitwise_not(frame)
 

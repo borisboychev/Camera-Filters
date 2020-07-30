@@ -12,7 +12,6 @@ class NoSuchFilter(Exception):
         self.message = message
         super().__init__(self.message)
 
-
 if sys.argv[1] == 'black_and_white':
     bw = BlackAndWhite()
     bw.execute_filter()
@@ -20,7 +19,6 @@ elif sys.argv[1] == 'blur':
     blur = BlurFilter()
     blur.execute_filter()
 elif sys.argv[1] == 'sepia':
-    SepiaFilter.execute_filter(SepiaFilter)
     sepia = SepiaFilter()
     sepia.execute_filter()
 elif sys.argv[1] == 'inverted':

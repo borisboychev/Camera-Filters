@@ -6,13 +6,12 @@ class BlurFilter:
     def __init__(self, capture_device=cv2.VideoCapture(0)):
         self.capture_device = capture_device
 
-
+    @staticmethod
     def make_1080p(self):
         self.capture_device.set(3, 1920)
         self.capture_device.set(4, 1080)
 
-    @staticmethod
-    def apply_blur(frame):
+    def apply_blur(self, frame):
         blur = cv2.GaussianBlur(frame, (7, 7,), cv2.BORDER_DEFAULT)
         frame = cv2.cvtColor(blur, cv2.COLOR_BGRA2BGR)
         return frame

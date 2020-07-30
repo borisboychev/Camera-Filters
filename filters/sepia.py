@@ -10,8 +10,7 @@ class SepiaFilter:
         self.capture_device.set(3, 1920)
         self.capture_device.set(4, 1080)
 
-    @staticmethod
-    def verify_alpha(frame):
+    def verify_alpha(self, frame):
         try:
             frame.shape[3]  # 4th pos
         except IndexError:
