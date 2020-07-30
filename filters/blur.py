@@ -6,7 +6,6 @@ class BlurFilter:
     def __init__(self, capture_device=cv2.VideoCapture(0)):
         self.capture_device = capture_device
 
-    @staticmethod
     def make_1080p(self):
         self.capture_device.set(3, 1920)
         self.capture_device.set(4, 1080)
