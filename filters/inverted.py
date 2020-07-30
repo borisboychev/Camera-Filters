@@ -3,9 +3,16 @@ import cv2
 capture_device = cv2.VideoCapture(0)
 
 
+def make_1080p():
+    capture_device.set(3, 1920)
+    capture_device.set(4, 1080)
+
+
 def apply_invert(frame):
     return cv2.bitwise_not(frame)
 
+
+make_1080p()
 
 while True:
 
