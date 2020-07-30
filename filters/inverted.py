@@ -3,28 +3,28 @@ import cv2
 capture_device = cv2.VideoCapture(0)
 
 
-def make_1080p():
-    capture_device.set(3, 1920)
-    capture_device.set(4, 1080)
+def execute_inverted():
+    def make_1080p():
+        capture_device.set(3, 1920)
+        capture_device.set(4, 1080)
 
+    def apply_invert(frame):
+        # inverts values
+        return cv2.bitwise_not(frame)
 
-def apply_invert(frame):
-    # inverts values
-    return cv2.bitwise_not(frame)
+    make_1080p()
 
+    while True:
 
-make_1080p()
+        if cv2.waitKey(20) & 0xFF == ord('q'):
+            break
 
-while True:
+        ret, frame = capture_device.read()
 
-    if cv2.waitKey(20) & 0xFF == ord('q'):
-        break
+        inverted = apply_invert(frame)
 
-    ret, frame = capture_device.read()
+        cv2.imshow('inverted', inverted)
+        # cv2.imshow('normal', frame)
 
-    inverted = apply_invert(frame)
-
-    cv2.imshow('inverted', inverted)
-    # cv2.imshow('normal', frame)
-
-cv2.destroyAllWindows()
+    capture_device.release()
+    cv2.destroyAllWindows()
